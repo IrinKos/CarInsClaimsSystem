@@ -4,55 +4,31 @@
     ViewData["Title"] = "List";
 }
 <table id="example" class="table table-hover table-striped table-bordered" style="width:100%; background-color: deepskyblue">
-        <thead class="thead-dark">
+    <thead class="thead-dark">
         <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Title)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Description)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.PolicyId)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Amount)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.FilledDate)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.PersonalEmail)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Photo)
-            </th>
+            <th>Title</th>
+            <th>Description</th>
+            <th>PolicyId</th>
+            <th>Amount</th>
+            <th>Filled Date</th>
+            <th>Personal Email</th>
+            <th>Photo</th>
         </tr>
     </thead>
     <tbody>
-        @foreach (var item in Model)
+        @foreach (var claim in Model)
         {
             <tr>
+                <td>@claim.Title</td>
+                <td>@claim.Description</td>
+                <td>@claim.PolicyId</td>
+                <td>@claim.Amount</td>
+                <td>@claim.FilledDate</td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Title)
+                    @Html.DisplayFor(modelItem => claim.PersonalEmail)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Description)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.PolicyId)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Amount)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.FilledDate)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.PersonalEmail)
-                </td>
-                <td>
-                    <img src="@Url.Action("GetClaimPhoto", "Home" , new { id=item.Id })" width="150" alt="image" />
+                    <img src="@Url.Action("GetClaimPhoto", "Home" , new { id=claim.Id })" width="150" alt="image" />
                 </td>
             </tr>
         }

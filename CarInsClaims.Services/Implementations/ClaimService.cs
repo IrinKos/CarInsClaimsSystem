@@ -29,7 +29,7 @@ namespace CarInsClaims.Services.Implementations
         public async Task<Claim> CreateClaim
             (string title, string description, int policyId, decimal amount, string personamEmail, byte[] claimCover)
         {
-            var user = await this.userService.CreateUser(personamEmail);
+            var user = await this.userService.CreateUserAsync(personamEmail);
 
             var userClaimlist = await GetUserClaimsAsync(personamEmail);
 
@@ -68,7 +68,7 @@ namespace CarInsClaims.Services.Implementations
             return claim;
         }
 
-        public async Task<Claim> GetClaim(Guid claimId)
+        public async Task<Claim> GetClaimAsync(Guid claimId)
         {
             claimId.ValidateIfNull(ExceptionMessages.IdIsNull);
             var claim = await this.context.Claims

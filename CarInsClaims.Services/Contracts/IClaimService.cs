@@ -11,7 +11,7 @@ namespace CarInsClaims.Services.Contracts
         Task<Claim> CreateClaim(string title, string description, int policyId, decimal amount, string personamEmail, byte[] claimCover);
         Task<ICollection<Claim>> GetAllClaimsAsync();
         ICollection<Claim> GetAllClaims();
-        Task<Claim> GetClaim(Guid id);
+        Task<Claim> GetClaimAsync(Guid id);
         Task<IReadOnlyCollection<Claim>> GetUserClaimsAsync(string userId);
         Task<ClaimPhoto> FindClaimPhotoAsync(Guid id);
     }

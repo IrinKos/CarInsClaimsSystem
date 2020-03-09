@@ -7,7 +7,7 @@ namespace CarInsClaims.Services.CustomExeptions
     public static class ExceptionMessages
     {
         public const string ContextIsNull = "Context cannot be null";
-        public const string UserServiceIsNull = "User service cannot be null";
+        public const string UserServiceIsNull = "UserService cannot be null";
         public const string ClaimIsNull = "The claim was not found";
         public const string IdIsNull = "Id cannot be null";
         public const string EmailIsNull = "The email was not found";
