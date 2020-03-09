@@ -1,0 +1,25 @@
+﻿@model ErrorViewModel
+
+
+<link href="~/css/button.css" rel="stylesheet" type="text/css">
+
+<div style="background-color: deepskyblue">
+    <hr class="bg-info" />
+    <h1 class="text-center text-danger font-weight-bolder">@Model.ErrorDescription</h1>
+    <div class="text-center text-info font-italic">
+        <hr class="bg-info" />
+    </div>
+</div>
+<div>
+    <a class="effect1" href='javascript:history.go(-1)'>
+        Go Back!
+        <span class="bg">   </span>
+    </a>
+</div>
+<div>
+    <a class="effect1" asp-controller="Home" asp-action="Index">
+        Go to Home Page!
+        <span class="bg">   </span>
+    </a>
+</div>
+

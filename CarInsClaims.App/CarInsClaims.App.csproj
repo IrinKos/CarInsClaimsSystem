@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <UserSecretsId>aspnet-CarInsClaims.App-1E2A02EE-3C5B-4997-975E-0A35FB047F9C</UserSecretsId>
+    <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
+  </PropertyGroup>
+
+
+  <ItemGroup>
+    <PackageReference Include="DataTables.AspNet.Core" Version="2.0.2" />
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.4" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <ProjectReference Include="..\CarInsClaims.Data\CarInsClaims.Data.csproj" />
+    <ProjectReference Include="..\CarInsClaims.Models\CarInsClaims.Models.csproj" />
+    <ProjectReference Include="..\CarInsClaims.Services\CarInsClaims.Services.csproj" />
+  </ItemGroup>
+
+</Project>

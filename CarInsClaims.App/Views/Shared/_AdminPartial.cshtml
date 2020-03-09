@@ -1,0 +1,61 @@
+﻿@model IEnumerable<CarInsClaims.App.Models.AdminClaimViewModel>
+
+@{
+    ViewData["Title"] = "List";
+}
+<table id="example" class="table table-hover table-striped table-bordered" style="width:100%; background-color: deepskyblue">
+        <thead class="thead-dark">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PolicyId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Amount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FilledDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PersonalEmail)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Photo)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PolicyId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Amount)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FilledDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PersonalEmail)
+                </td>
+                <td>
+                    <img src="@Url.Action("GetClaimPhoto", "Home" , new { id=item.Id })" width="150" alt="image" />
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

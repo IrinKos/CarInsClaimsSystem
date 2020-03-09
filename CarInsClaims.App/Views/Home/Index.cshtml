@@ -1,0 +1,16 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<CarInsClaimsUser> SignInManager
+@inject UserManager<CarInsClaimsUser> UserManager
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+@if (SignInManager.IsSignedIn(User))
+{
+    <partial name="_AdminPartial" />
+}
+else
+{
+    <partial name="_UserPartial" />
+}
