@@ -24,7 +24,7 @@ They can submit a form for an automobile claim:
 
 The private part of the application is visible only for power user.
 Power user has permissions to export the information about registered claims.
-![image](https://user-images.githubusercontent.com/10573297/76220811-c9108500-6220-11ea-8836-30933593f40d.png)
+![image](https://user-images.githubusercontent.com/10573297/76256222-3be92280-6258-11ea-8840-3f7d6ec780be.png)
 
 #### Credentials:
 
