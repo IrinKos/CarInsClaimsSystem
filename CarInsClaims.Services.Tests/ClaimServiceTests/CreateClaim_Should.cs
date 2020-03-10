@@ -100,50 +100,5 @@ namespace CarInsClaims.Services.Tests.ClaimServiceTests
                 await sut.CreateClaim(testClaimTitle, testDescription, testPolicyId, testAmount, testPersonalEmail, testPhoto);
             }
         }
-
-        //[TestMethod]
-        //public void ThrowNullReferenceException_NullClaimPersonalEmail()
-        //{
-        //    string testClaimTitle = "Title";
-        //    string testDescription = "Description";
-        //    int testPolicyId = 11111;
-        //    decimal testAmount = 3456;
-        //    string testPersonalEmail = null;
-        //    byte[] testPhoto = new byte[0];
-        //    var options = TestUtilities.GetOptions(nameof(ThrowNullReferenceException_NullClaimPersonalEmail));
-
-        //    using (var assertContext = new CarInsClaimsAppContext(options))
-        //    {
-        //        var sut = new ClaimService(assertContext, userService.Object);
-        //        var ex = Assert.ThrowsException<ClaimException>(
-        //        () => sut.CreateClaim(testClaimTitle, testDescription, testPolicyId, testAmount, testPersonalEmail, testPhoto));
-        //        Assert.AreEqual("The email was not found", ex.Message);
-        //    }
-        //}
-
-        //[TestMethod]
-        //public async Task Create_Claim()
-        //{
-        //    string testClaimTitle = "Title";
-        //    string testDescription = "Description";
-        //    int testPolicyId = 11111;
-        //    decimal testAmount = 3456;
-        //    string testPersonalEmail = "email@email.com";
-        //    byte[] testPhoto = new byte[0];
-        //    var options = TestUtilities.GetOptions(nameof(ThrowNullReferenceException_NegatuveClaimAmount));
-
-        //    using (var assertContext = new CarInsClaimsAppContext(options))
-        //    {
-        //        var sut = new ClaimService(assertContext, userService.Object);
-        //        await sut.CreateClaim(testClaimTitle, testDescription, testPolicyId, testAmount, testPersonalEmail, testPhoto);
-        //    }
-
-        //    using (var assertContext = new CarInsClaimsAppContext(options))
-        //    {
-        //        Assert.AreEqual(1, assertContext.Claims.Count());
-        //        var claim = await assertContext.Claims.FirstOrDefaultAsync(c => c.Title == testClaimTitle);
-        //        Assert.IsNotNull(claim);
-        //    }
-        //}
     }
 }

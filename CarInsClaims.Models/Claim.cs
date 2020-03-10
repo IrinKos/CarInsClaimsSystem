@@ -19,7 +19,6 @@ namespace CarInsClaims.Models
         public string Description { get; set; }
 
         [Required]
-        //(ErrorMessage = "Policy Id field is required and should contains exactly five characters. If the policy number contains less than five characters, please fill the number with zeros in the begin")
         [MinLength(7)]
         [MaxLength(7)]
         public int PolicyId { get; set; }
@@ -31,14 +30,11 @@ namespace CarInsClaims.Models
         [Required]
         public ClaimPhoto Photo { get; set; }
 
-        //public IFormFile ClaimImage { get; set; }
-
         [Required]
         [EmailAddress]
         public string PersonalEmail { get; set; }
 
         public DateTime FilledDate { get; set; }
-
 
         public string UserId { get; set; }
         public CarInsClaimsUser User { get; set; }

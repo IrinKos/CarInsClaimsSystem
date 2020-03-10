@@ -24,8 +24,7 @@
                 <td>@claim.PolicyId</td>
                 <td>@claim.Amount</td>
                 <td>@claim.FilledDate</td>
-                <td>
-                    @Html.DisplayFor(modelItem => claim.PersonalEmail)
+                <td>@claim.PersonalEmail
                 </td>
                 <td>
                     <img src="@Url.Action("GetClaimPhoto", "Home" , new { id=claim.Id })" width="150" alt="image" />

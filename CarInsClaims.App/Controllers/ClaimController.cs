@@ -27,16 +27,12 @@ namespace CarInsClaims.App.Controllers
         }
 
         [HttpPost]
-        //[ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(ClaimViewModel claimViewModel)
         {
             try
             {
                 var photo = claimViewModel.Photo;
-                if (photo == null)
-                {
-                    throw new NullReferenceException("The photo should be uploaded");
-                }
+
                 byte[] claimPhoto;
                 using (var stream = new MemoryStream())
                 {
@@ -45,7 +41,6 @@ namespace CarInsClaims.App.Controllers
                 }
                 await this.claimService.CreateClaim(claimViewModel.Title, claimViewModel.Description, claimViewModel.PolicyId, claimViewModel.Amount, claimViewModel.PersonalEmail, claimPhoto);
 
-                //return View("Create", claimViewModel);
                 return RedirectToAction(nameof(Created));
             }
             catch (Exception ex)
@@ -55,10 +50,10 @@ namespace CarInsClaims.App.Controllers
 
                 return RedirectToAction("Index", "ErrorHandler", vm);
             }
-                
+
         }
 
-        public IActionResult Created() 
+        public IActionResult Created()
         {
             return View();
         }

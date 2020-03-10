@@ -18,31 +18,51 @@ namespace CarInsClaims.App.Controllers
         }
         public async Task<IActionResult> Index()
         {
-            var claims = await this.claimService.GetAllClaimsAsync();
-
-            var claimsVewModel = new List<AdminClaimViewModel>();
-
-            foreach (var claim in claims)
+            try
             {
-                claimsVewModel.Add(new AdminClaimViewModel()
+                var claims = await this.claimService.GetAllClaimsAsync();
+
+                var claimsVewModel = new List<AdminClaimViewModel>();
+
+                foreach (var claim in claims)
                 {
-                    Id = claim.Id,
-                    Title = claim.Title,
-                    Description = claim.Description,
-                    PolicyId = claim.PolicyId,
-                    Amount = claim.Amount,
-                    FilledDate = claim.FilledDate.ToString(),
-                    PersonalEmail = claim.PersonalEmail
-                });
+                    claimsVewModel.Add(new AdminClaimViewModel()
+                    {
+                        Id = claim.Id,
+                        Title = claim.Title,
+                        Description = claim.Description,
+                        PolicyId = claim.PolicyId,
+                        Amount = claim.Amount,
+                        FilledDate = claim.FilledDate.ToString(),
+                        PersonalEmail = claim.PersonalEmail
+                    });
+                }
+                return View(claimsVewModel);
             }
-            return View(claimsVewModel);
+            catch (Exception ex)
+            {
+                var vm = new ErrorViewModel();
+                vm.ErrorDescription = ex.Message;
+
+                return RedirectToAction("Index", "ErrorHandler", vm);
+            }
         }
 
         public async Task<IActionResult> GetClaimPhoto(Guid id) 
         {
-            var photo = await this.claimService.FindClaimPhotoAsync(id);
+            try
+            {
+                var photo = await this.claimService.FindClaimPhotoAsync(id);
 
-            return File(photo.Cover, "image/png");
+                return File(photo.Cover, "image/png");
+            }
+            catch (Exception ex)
+            {
+                var vm = new ErrorViewModel();
+                vm.ErrorDescription = ex.Message;
+
+                return RedirectToAction("Index", "ErrorHandler", vm);
+            }
         }
     }
 }
